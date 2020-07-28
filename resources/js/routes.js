@@ -37,7 +37,23 @@ export default new Router({
             name: 'ver_info_organizacion',
             component: require('./components/OrganizacionFormComponent').default,
             props: true
-        }
+        },
+        {
+            path: '/proyecto_fut-si/public/panel-fut-si/alta/categoria',
+            name: 'alta_categoria',
+            component: require('./components/CategoriaFormComponent').default,
+        },
+        {
+            path: '/proyecto_fut-si/public/panel-fut-si/ver-categoria/:id',
+            name: 'ver_info_categoria',
+            component: require('./components/CategoriaFormComponent').default,
+            props: true
+        },
+        {
+            path: '/proyecto_fut-si/public/panel-fut-si/categorias',
+            name: 'ver_categorias',
+            component: require('./components/CategoriasShowComponent').default,
+        },
         
     ],
     mode: "history"

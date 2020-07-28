@@ -47,4 +47,12 @@ Route::group(['middleware' => ['login_token']], function () {
     Route::get('show-organizaciones', ['as' => 'show-organizaciones', 'uses' => 'OrganizacionController@showInfo']);
     Route::get('show-one-organizacion/{id?}', ['as' => 'show-one-organizacion', 'uses' => 'OrganizacionController@showOneInfo']);
     Route::put('update-organizacion/{id?}', ['as' => 'update-organizacion', 'uses' => 'OrganizacionController@updateOrganizacion']);
+
+    //CATEGORIA//
+    Route::get('panel-fut-si/categorias', ['as' => 'panel-fut-si/categorias', 'uses' => 'CategoriaController@show']);
+    Route::get('panel-fut-si/alta/categoria', ['as' => 'panel-fut-si/alta/categoria', 'uses' => 'CategoriaController@altaCategoria']);
+    Route::post('save-categoria', ['as' => 'save-categoria', 'uses' => 'CategoriaController@saveCategoria']);
+    Route::get('show-categorias', ['as' => 'show-categorias', 'uses' => 'CategoriaController@showInfo']);
+    Route::get('show-one-categoria/{id?}', ['as' => 'show-one-categoria', 'uses' => 'CategoriaController@showOneInfo']);
+    Route::put('update-categoria/{id?}', ['as' => 'update-categoria', 'uses' => 'CategoriaController@updateCategoria']);
 });

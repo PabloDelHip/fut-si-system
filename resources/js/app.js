@@ -60,6 +60,7 @@ Vue.use(VueGoogleMaps, {
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('instalaciones-component', require('./components/InstalacionesComponent.vue').default);
 Vue.component('organizacion-component', require('./components/OrganizacionComponent.vue').default);
+Vue.component('categoria-component', require('./components/CategoriaComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
