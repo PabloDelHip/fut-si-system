@@ -39,6 +39,7 @@ Route::group(['middleware' => ['login_token']], function () {
     Route::post('save-instalaciones', ['as' => 'save-instalaciones', 'uses' => 'InstalacionesController@saveInstalacion']);
     Route::post('save-imagenes-instalaciones', ['as' => 'save-imagenes-instalaciones', 'uses' => 'InstalacionesController@saveImageInstalacion']);
     Route::put('update-instalacion/{id?}', ['as' => 'update-instalacion', 'uses' => 'InstalacionesController@updateInstalacion']);
+    Route::get('show-instalaciones', ['as' => 'show-instalaciones', 'uses' => 'InstalacionesController@showInfo']);
 
     //ORGANIZACIONES//
     Route::get('panel-fut-si/organizaciones', ['as' => 'panel-fut-si/organizacion', 'uses' => 'OrganizacionController@show']);
@@ -55,4 +56,9 @@ Route::group(['middleware' => ['login_token']], function () {
     Route::get('show-categorias', ['as' => 'show-categorias', 'uses' => 'CategoriaController@showInfo']);
     Route::get('show-one-categoria/{id?}', ['as' => 'show-one-categoria', 'uses' => 'CategoriaController@showOneInfo']);
     Route::put('update-categoria/{id?}', ['as' => 'update-categoria', 'uses' => 'CategoriaController@updateCategoria']);
+
+    //TORNEOS//
+    Route::get('panel-fut-si/alta/torneo', ['as' => 'panel-fut-si/alta/torneo', 'uses' => 'TorneoController@show']);
+
+
 });

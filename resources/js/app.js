@@ -61,6 +61,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('instalaciones-component', require('./components/InstalacionesComponent.vue').default);
 Vue.component('organizacion-component', require('./components/OrganizacionComponent.vue').default);
 Vue.component('categoria-component', require('./components/CategoriaComponent.vue').default);
+Vue.component('torneo-component', require('./components/TorneoComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

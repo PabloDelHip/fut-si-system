@@ -9,6 +9,8 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Facades\Crypt;
+use Firebase\JWT\JWT;
+use Cookie;
 
 class InstalacionesController extends Controller
 {
@@ -23,6 +25,9 @@ class InstalacionesController extends Controller
                 'timeout'  => 2.0,
             ]);
                 // dd($request->datos[0]);
+            $token = Cookie::get('token');
+            $key = 'este-es-el-seed-desarrollo';
+            $token_info = JWT::decode($token, $key, array('HS256'));
             
             $response = $client->request('POST', 'instalacion', [
                 'form_params' => [
@@ -43,7 +48,8 @@ class InstalacionesController extends Controller
                     'cafeteria'=> $request->datos[0]['cafeteria'],
                     'restaurante'=> $request->datos[0]['restaurante'],
                     'tiendas'=> $request->datos[0]['tiendas'],
-                    'notas'=> $request->datos[0]['notas']
+                    'notas'=> $request->datos[0]['notas'],
+                    'usuario'=> $token_info->usuario->_id
                 ]
             ]);
             
@@ -111,6 +117,36 @@ class InstalacionesController extends Controller
             
         }
         
+    }
+
+    public function showInfo()
+    {
+
+        $token = Cookie::get('token');
+        $key = 'este-es-el-seed-desarrollo';
+        $token_info = JWT::decode($token, $key, array('HS256'));
+        
+        try {
+            $client = new Client([
+                // Base URI is used with relative requests
+                'base_uri' => 'localhost:3000',
+                // You can set any number of default request options.
+                'timeout'  => 2.0,
+            ]);
+                // dd($request->datos[0]);
+            
+            $response = $client->request('GET', 'instalacion/usuario/'.$token_info->usuario->_id);
+            
+            $response = json_decode($response->getBody()->getContents());
+            return response()->json($response);
+
+        } catch (RequestException $e) {
+            $exception = (string) $e->getResponse()->getBody();
+            $exception = json_decode($exception);
+            return response()->json(['mesage' => $exception]);
+            
+            
+        }
     }
 
     public function updateInstalacion(Request $request,$id_instalacion)

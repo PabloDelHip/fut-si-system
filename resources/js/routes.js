@@ -54,6 +54,11 @@ export default new Router({
             name: 'ver_categorias',
             component: require('./components/CategoriasShowComponent').default,
         },
+        {
+            path: '/proyecto_fut-si/public/panel-fut-si/alta/torneo',
+            name: 'alta_torneo',
+            component: require('./components/TorneoFormComponent').default,
+        },
         
     ],
     mode: "history"

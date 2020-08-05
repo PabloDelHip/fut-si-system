@@ -67,7 +67,7 @@
             async selectInstalaciones()
             {
                 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-                await axios.get('http://localhost:3000/instalacion')
+                await axios.get('http://localhost:8080/proyecto_fut-si/public/show-instalaciones')
                 .then(response => {
                     this.instalaciones = response.data.instalacion;
                     console.log(this.instalaciones)
