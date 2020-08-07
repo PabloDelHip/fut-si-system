@@ -26,12 +26,12 @@
     <link rel="stylesheet" href="{{ url('/dist/css/adminlte.min.css') }}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ url('/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{ url('/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ url('/plugins/summernote/summernote-bs4.css') }} ">
     <link rel="stylesheet" href="{{url('plugins/select2/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{url('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/bootstrap-datepicker3.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -760,7 +760,6 @@
     <script src="{{url('plugins/jquery-knob/jquery.knob.min.js')}} "></script>
     <!-- daterangepicker -->
     <script src="{{url('plugins/moment/moment.min.js')}}"></script>
-    <script src="{{url('plugins/daterangepicker/daterangepicker.js')}}"></script>
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="{{url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}} "></script>
     <!-- Summernote -->
@@ -782,7 +781,9 @@
     <script src="{{url('plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js')}}"></script>
     <!-- Select2 -->
     <script src="{{url('plugins/select2/js/select2.full.min.js')}}"></script>
-
+    <!-- time picker -->
+    <script src="{{url('js/bootstrap-datepicker.js')}}"></script>
+    <script src="{{url('locales/bootstrap-datepicker.es.min.js')}}"></script>
     <script>
       $(function () {
         $("#example1").DataTable({
@@ -807,6 +808,19 @@
         $('.select2bs4').select2({
           theme: 'bootstrap4'
         })
+
+        $('.datepicker').datepicker({
+          autoclose:true,
+        });
+
+        $.fn.datetimepicker.dates['en'] = {
+            days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+            daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"],
+            months: ["January", "February", "March", "April", "May", "June", "July", "Agosto", "September", "October", "November", "December"],
+            monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            today: "Today"
+        };
       });
     </script>
     

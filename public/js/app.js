@@ -4334,6 +4334,112 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
  // import { required, email } from 'vee-validate/dist/rules';
 
@@ -72330,7 +72436,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row col-12" }, [
-    _c("div", { staticClass: "col-6" }, [
+    _c("div", { staticClass: "col-12" }, [
       _c(
         "div",
         { staticClass: "form-group" },
@@ -72568,14 +72674,1403 @@ var render = function() {
                                       )
                                     ]),
                                     _vm._v(" "),
-                                    _c("div", { staticClass: "col-sm-12" }, [
+                                    _c("div", { staticClass: "col-sm-6" }, [
                                       _c(
                                         "div",
                                         { staticClass: "form-group" },
                                         [_c("SelectInstalaciones")],
                                         1
                                       )
-                                    ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-6" }, [
+                                      _c(
+                                        "div",
+                                        { staticClass: "form-group" },
+                                        [
+                                          _c("label", [
+                                            _vm._v("Duración de cada tiempo")
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("small", [_vm._v("(En minutos)")]),
+                                          _vm._v(" "),
+                                          _c("ValidationProvider", {
+                                            attrs: {
+                                              name: "tiempo",
+                                              rules: "numeric|required"
+                                            },
+                                            scopedSlots: _vm._u(
+                                              [
+                                                {
+                                                  key: "default",
+                                                  fn: function(ref) {
+                                                    var errors = ref.errors
+                                                    return [
+                                                      _c("input", {
+                                                        directives: [
+                                                          {
+                                                            name: "model",
+                                                            rawName: "v-model",
+                                                            value:
+                                                              _vm.duracion_tiempo,
+                                                            expression:
+                                                              "duracion_tiempo"
+                                                          }
+                                                        ],
+                                                        class: [
+                                                          "form-control",
+                                                          errors[0]
+                                                            ? "is-invalid"
+                                                            : ""
+                                                        ],
+                                                        attrs: {
+                                                          type: "text",
+                                                          name: "tiempo"
+                                                        },
+                                                        domProps: {
+                                                          value:
+                                                            _vm.duracion_tiempo
+                                                        },
+                                                        on: {
+                                                          input: function(
+                                                            $event
+                                                          ) {
+                                                            if (
+                                                              $event.target
+                                                                .composing
+                                                            ) {
+                                                              return
+                                                            }
+                                                            _vm.duracion_tiempo =
+                                                              $event.target.value
+                                                          }
+                                                        }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          staticClass:
+                                                            "error invalid-feedback"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(errors[0])
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              null,
+                                              true
+                                            )
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-6" }, [
+                                      _c(
+                                        "div",
+                                        { staticClass: "form-group" },
+                                        [
+                                          _c("label", [_vm._v("Sexo")]),
+                                          _vm._v(" "),
+                                          _c("ValidationProvider", {
+                                            attrs: {
+                                              name: "Instalacion",
+                                              rules: "required"
+                                            },
+                                            scopedSlots: _vm._u(
+                                              [
+                                                {
+                                                  key: "default",
+                                                  fn: function(ref) {
+                                                    var errors = ref.errors
+                                                    return [
+                                                      _c(
+                                                        "select",
+                                                        {
+                                                          staticClass:
+                                                            "select2 form-control",
+                                                          staticStyle: {
+                                                            width: "100%"
+                                                          },
+                                                          attrs: {
+                                                            "data-placeholder":
+                                                              "Seleccionar Sexo"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "option",
+                                                            {
+                                                              attrs: {
+                                                                value: "H"
+                                                              }
+                                                            },
+                                                            [_vm._v("Hombre")]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "option",
+                                                            {
+                                                              attrs: {
+                                                                value: "M"
+                                                              }
+                                                            },
+                                                            [_vm._v("Mujer")]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "option",
+                                                            {
+                                                              attrs: {
+                                                                value: "MX"
+                                                              }
+                                                            },
+                                                            [_vm._v("Mixto")]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          class: [
+                                                            "error",
+                                                            "invalid-feedback",
+                                                            errors[0]
+                                                              ? "ver"
+                                                              : ""
+                                                          ]
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(errors[0])
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              null,
+                                              true
+                                            )
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-6" }, [
+                                      _c(
+                                        "div",
+                                        { staticClass: "form-group" },
+                                        [
+                                          _c("label", [
+                                            _vm._v(
+                                              "Fecha De Inicio del Torneo:"
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("ValidationProvider", {
+                                            attrs: {
+                                              name: "Fecha Inicio",
+                                              rules: "required"
+                                            },
+                                            scopedSlots: _vm._u(
+                                              [
+                                                {
+                                                  key: "default",
+                                                  fn: function(ref) {
+                                                    var errors = ref.errors
+                                                    return [
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "input-group date",
+                                                          attrs: {
+                                                            "data-provide":
+                                                              "datepicker"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("input", {
+                                                            directives: [
+                                                              {
+                                                                name: "model",
+                                                                rawName:
+                                                                  "v-model",
+                                                                value:
+                                                                  _vm.fecha_inicio,
+                                                                expression:
+                                                                  "fecha_inicio"
+                                                              }
+                                                            ],
+                                                            staticClass:
+                                                              "form-control form-control-sm",
+                                                            attrs: {
+                                                              type: "text",
+                                                              readonly: ""
+                                                            },
+                                                            domProps: {
+                                                              value:
+                                                                _vm.fecha_inicio
+                                                            },
+                                                            on: {
+                                                              input: function(
+                                                                $event
+                                                              ) {
+                                                                if (
+                                                                  $event.target
+                                                                    .composing
+                                                                ) {
+                                                                  return
+                                                                }
+                                                                _vm.fecha_inicio =
+                                                                  $event.target.value
+                                                              }
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "input-group-addon"
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "div",
+                                                                {
+                                                                  staticClass:
+                                                                    "input-group-append",
+                                                                  attrs: {
+                                                                    "data-target":
+                                                                      "#reservationdate",
+                                                                    "data-toggle":
+                                                                      "datetimepicker"
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "input-group-text"
+                                                                    },
+                                                                    [
+                                                                      _c("i", {
+                                                                        staticClass:
+                                                                          "fa fa-calendar"
+                                                                      })
+                                                                    ]
+                                                                  )
+                                                                ]
+                                                              )
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          class: [
+                                                            "error",
+                                                            "invalid-feedback",
+                                                            errors[0]
+                                                              ? "ver"
+                                                              : ""
+                                                          ]
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(errors[0])
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              null,
+                                              true
+                                            )
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-6" }, [
+                                      _c(
+                                        "div",
+                                        { staticClass: "form-group" },
+                                        [
+                                          _c("label", [
+                                            _vm._v(
+                                              "Fecha Estimada De Finalización Del Torneo:"
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("ValidationProvider", {
+                                            attrs: {
+                                              name: "Fecha Inicio",
+                                              rules: "required"
+                                            },
+                                            scopedSlots: _vm._u(
+                                              [
+                                                {
+                                                  key: "default",
+                                                  fn: function(ref) {
+                                                    var errors = ref.errors
+                                                    return [
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "input-group date",
+                                                          attrs: {
+                                                            "data-provide":
+                                                              "datepicker"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("input", {
+                                                            directives: [
+                                                              {
+                                                                name: "model",
+                                                                rawName:
+                                                                  "v-model",
+                                                                value:
+                                                                  _vm.fecha_final_temporada,
+                                                                expression:
+                                                                  "fecha_final_temporada"
+                                                              }
+                                                            ],
+                                                            staticClass:
+                                                              "form-control form-control-sm",
+                                                            attrs: {
+                                                              type: "text",
+                                                              readonly: ""
+                                                            },
+                                                            domProps: {
+                                                              value:
+                                                                _vm.fecha_final_temporada
+                                                            },
+                                                            on: {
+                                                              input: function(
+                                                                $event
+                                                              ) {
+                                                                if (
+                                                                  $event.target
+                                                                    .composing
+                                                                ) {
+                                                                  return
+                                                                }
+                                                                _vm.fecha_final_temporada =
+                                                                  $event.target.value
+                                                              }
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "input-group-addon"
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "div",
+                                                                {
+                                                                  staticClass:
+                                                                    "input-group-append",
+                                                                  attrs: {
+                                                                    "data-target":
+                                                                      "#reservationdate",
+                                                                    "data-toggle":
+                                                                      "datetimepicker"
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "input-group-text"
+                                                                    },
+                                                                    [
+                                                                      _c("i", {
+                                                                        staticClass:
+                                                                          "fa fa-calendar"
+                                                                      })
+                                                                    ]
+                                                                  )
+                                                                ]
+                                                              )
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          class: [
+                                                            "error",
+                                                            "invalid-feedback",
+                                                            errors[0]
+                                                              ? "ver"
+                                                              : ""
+                                                          ]
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(errors[0])
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              null,
+                                              true
+                                            )
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-6" }, [
+                                      _c(
+                                        "div",
+                                        { staticClass: "form-group" },
+                                        [
+                                          _c("label", [
+                                            _vm._v("Fecha Limite de pagos:")
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("ValidationProvider", {
+                                            attrs: {
+                                              name: "Fecha Inicio",
+                                              rules: "required"
+                                            },
+                                            scopedSlots: _vm._u(
+                                              [
+                                                {
+                                                  key: "default",
+                                                  fn: function(ref) {
+                                                    var errors = ref.errors
+                                                    return [
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "input-group date",
+                                                          attrs: {
+                                                            "data-provide":
+                                                              "datepicker"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("input", {
+                                                            directives: [
+                                                              {
+                                                                name: "model",
+                                                                rawName:
+                                                                  "v-model",
+                                                                value:
+                                                                  _vm.fecha_limite_pagos,
+                                                                expression:
+                                                                  "fecha_limite_pagos"
+                                                              }
+                                                            ],
+                                                            staticClass:
+                                                              "form-control form-control-sm",
+                                                            attrs: {
+                                                              type: "text",
+                                                              readonly: ""
+                                                            },
+                                                            domProps: {
+                                                              value:
+                                                                _vm.fecha_limite_pagos
+                                                            },
+                                                            on: {
+                                                              input: function(
+                                                                $event
+                                                              ) {
+                                                                if (
+                                                                  $event.target
+                                                                    .composing
+                                                                ) {
+                                                                  return
+                                                                }
+                                                                _vm.fecha_limite_pagos =
+                                                                  $event.target.value
+                                                              }
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "input-group-addon"
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "div",
+                                                                {
+                                                                  staticClass:
+                                                                    "input-group-append",
+                                                                  attrs: {
+                                                                    "data-target":
+                                                                      "#reservationdate",
+                                                                    "data-toggle":
+                                                                      "datetimepicker"
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "input-group-text"
+                                                                    },
+                                                                    [
+                                                                      _c("i", {
+                                                                        staticClass:
+                                                                          "fa fa-calendar"
+                                                                      })
+                                                                    ]
+                                                                  )
+                                                                ]
+                                                              )
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          class: [
+                                                            "error",
+                                                            "invalid-feedback",
+                                                            errors[0]
+                                                              ? "ver"
+                                                              : ""
+                                                          ]
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(errors[0])
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              null,
+                                              true
+                                            )
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-6" }, [
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c("label", [
+                                          _vm._v("Costo De Inscripción")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.costo_inscripcion,
+                                              expression: "costo_inscripcion"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "text",
+                                            name: "codigo_postal"
+                                          },
+                                          domProps: {
+                                            value: _vm.costo_inscripcion
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.costo_inscripcion =
+                                                $event.target.value
+                                            }
+                                          }
+                                        })
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-6" }, [
+                                      _c(
+                                        "div",
+                                        { staticClass: "form-group" },
+                                        [
+                                          _c("label", [
+                                            _vm._v("Costo De Albitraje")
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("ValidationProvider", {
+                                            attrs: {
+                                              name: "Telefono",
+                                              rules: "numeric"
+                                            },
+                                            scopedSlots: _vm._u(
+                                              [
+                                                {
+                                                  key: "default",
+                                                  fn: function(ref) {
+                                                    var errors = ref.errors
+                                                    return [
+                                                      _c("input", {
+                                                        directives: [
+                                                          {
+                                                            name: "model",
+                                                            rawName: "v-model",
+                                                            value: _vm.telefono,
+                                                            expression:
+                                                              "telefono"
+                                                          }
+                                                        ],
+                                                        class: [
+                                                          "form-control",
+                                                          errors[0]
+                                                            ? "is-invalid"
+                                                            : ""
+                                                        ],
+                                                        attrs: {
+                                                          type: "text",
+                                                          name: "telefono"
+                                                        },
+                                                        domProps: {
+                                                          value: _vm.telefono
+                                                        },
+                                                        on: {
+                                                          input: function(
+                                                            $event
+                                                          ) {
+                                                            if (
+                                                              $event.target
+                                                                .composing
+                                                            ) {
+                                                              return
+                                                            }
+                                                            _vm.telefono =
+                                                              $event.target.value
+                                                          }
+                                                        }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          staticClass:
+                                                            "error invalid-feedback"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(errors[0])
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              null,
+                                              true
+                                            )
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-6" }),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-3" }, [
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "custom-control custom-checkbox"
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.lunes,
+                                                  expression: "lunes"
+                                                }
+                                              ],
+                                              staticClass:
+                                                "custom-control-input",
+                                              attrs: {
+                                                type: "checkbox",
+                                                id: "_vestuarios",
+                                                value: "true"
+                                              },
+                                              domProps: {
+                                                checked: Array.isArray(
+                                                  _vm.lunes
+                                                )
+                                                  ? _vm._i(_vm.lunes, "true") >
+                                                    -1
+                                                  : _vm.lunes
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  var $$a = _vm.lunes,
+                                                    $$el = $event.target,
+                                                    $$c = $$el.checked
+                                                      ? true
+                                                      : false
+                                                  if (Array.isArray($$a)) {
+                                                    var $$v = "true",
+                                                      $$i = _vm._i($$a, $$v)
+                                                    if ($$el.checked) {
+                                                      $$i < 0 &&
+                                                        (_vm.lunes = $$a.concat(
+                                                          [$$v]
+                                                        ))
+                                                    } else {
+                                                      $$i > -1 &&
+                                                        (_vm.lunes = $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          ))
+                                                    }
+                                                  } else {
+                                                    _vm.lunes = $$c
+                                                  }
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "custom-control-label",
+                                                attrs: { for: "_vestuarios" }
+                                              },
+                                              [_vm._v("Lunes")]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-3" }, [
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "custom-control custom-checkbox"
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.martes,
+                                                  expression: "martes"
+                                                }
+                                              ],
+                                              staticClass:
+                                                "custom-control-input",
+                                              attrs: {
+                                                type: "checkbox",
+                                                id: "_casacas",
+                                                value: "option1"
+                                              },
+                                              domProps: {
+                                                checked: Array.isArray(
+                                                  _vm.martes
+                                                )
+                                                  ? _vm._i(
+                                                      _vm.martes,
+                                                      "option1"
+                                                    ) > -1
+                                                  : _vm.martes
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  var $$a = _vm.martes,
+                                                    $$el = $event.target,
+                                                    $$c = $$el.checked
+                                                      ? true
+                                                      : false
+                                                  if (Array.isArray($$a)) {
+                                                    var $$v = "option1",
+                                                      $$i = _vm._i($$a, $$v)
+                                                    if ($$el.checked) {
+                                                      $$i < 0 &&
+                                                        (_vm.martes = $$a.concat(
+                                                          [$$v]
+                                                        ))
+                                                    } else {
+                                                      $$i > -1 &&
+                                                        (_vm.martes = $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          ))
+                                                    }
+                                                  } else {
+                                                    _vm.martes = $$c
+                                                  }
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "custom-control-label",
+                                                attrs: { for: "_casacas" }
+                                              },
+                                              [_vm._v("Martes")]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-3" }, [
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "custom-control custom-checkbox"
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.miercoles,
+                                                  expression: "miercoles"
+                                                }
+                                              ],
+                                              staticClass:
+                                                "custom-control-input",
+                                              attrs: {
+                                                type: "checkbox",
+                                                id: "_estacionamiento",
+                                                value: "option1"
+                                              },
+                                              domProps: {
+                                                checked: Array.isArray(
+                                                  _vm.miercoles
+                                                )
+                                                  ? _vm._i(
+                                                      _vm.miercoles,
+                                                      "option1"
+                                                    ) > -1
+                                                  : _vm.miercoles
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  var $$a = _vm.miercoles,
+                                                    $$el = $event.target,
+                                                    $$c = $$el.checked
+                                                      ? true
+                                                      : false
+                                                  if (Array.isArray($$a)) {
+                                                    var $$v = "option1",
+                                                      $$i = _vm._i($$a, $$v)
+                                                    if ($$el.checked) {
+                                                      $$i < 0 &&
+                                                        (_vm.miercoles = $$a.concat(
+                                                          [$$v]
+                                                        ))
+                                                    } else {
+                                                      $$i > -1 &&
+                                                        (_vm.miercoles = $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          ))
+                                                    }
+                                                  } else {
+                                                    _vm.miercoles = $$c
+                                                  }
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "custom-control-label",
+                                                attrs: {
+                                                  for: "_estacionamiento"
+                                                }
+                                              },
+                                              [_vm._v("Miercoles")]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-3" }, [
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "custom-control custom-checkbox"
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.jueves,
+                                                  expression: "jueves"
+                                                }
+                                              ],
+                                              staticClass:
+                                                "custom-control-input",
+                                              attrs: {
+                                                type: "checkbox",
+                                                id: "_cafeteria",
+                                                value: "option1"
+                                              },
+                                              domProps: {
+                                                checked: Array.isArray(
+                                                  _vm.jueves
+                                                )
+                                                  ? _vm._i(
+                                                      _vm.jueves,
+                                                      "option1"
+                                                    ) > -1
+                                                  : _vm.jueves
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  var $$a = _vm.jueves,
+                                                    $$el = $event.target,
+                                                    $$c = $$el.checked
+                                                      ? true
+                                                      : false
+                                                  if (Array.isArray($$a)) {
+                                                    var $$v = "option1",
+                                                      $$i = _vm._i($$a, $$v)
+                                                    if ($$el.checked) {
+                                                      $$i < 0 &&
+                                                        (_vm.jueves = $$a.concat(
+                                                          [$$v]
+                                                        ))
+                                                    } else {
+                                                      $$i > -1 &&
+                                                        (_vm.jueves = $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          ))
+                                                    }
+                                                  } else {
+                                                    _vm.jueves = $$c
+                                                  }
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "custom-control-label",
+                                                attrs: { for: "_cafeteria" }
+                                              },
+                                              [_vm._v("Jueves")]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-3" }, [
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "custom-control custom-checkbox"
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.viernes,
+                                                  expression: "viernes"
+                                                }
+                                              ],
+                                              staticClass:
+                                                "custom-control-input",
+                                              attrs: {
+                                                type: "checkbox",
+                                                id: "_restaurantes",
+                                                value: "option1"
+                                              },
+                                              domProps: {
+                                                checked: Array.isArray(
+                                                  _vm.viernes
+                                                )
+                                                  ? _vm._i(
+                                                      _vm.viernes,
+                                                      "option1"
+                                                    ) > -1
+                                                  : _vm.viernes
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  var $$a = _vm.viernes,
+                                                    $$el = $event.target,
+                                                    $$c = $$el.checked
+                                                      ? true
+                                                      : false
+                                                  if (Array.isArray($$a)) {
+                                                    var $$v = "option1",
+                                                      $$i = _vm._i($$a, $$v)
+                                                    if ($$el.checked) {
+                                                      $$i < 0 &&
+                                                        (_vm.viernes = $$a.concat(
+                                                          [$$v]
+                                                        ))
+                                                    } else {
+                                                      $$i > -1 &&
+                                                        (_vm.viernes = $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          ))
+                                                    }
+                                                  } else {
+                                                    _vm.viernes = $$c
+                                                  }
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "custom-control-label",
+                                                attrs: { for: "_restaurantes" }
+                                              },
+                                              [_vm._v("Viernes")]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-3" }, [
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "custom-control custom-checkbox"
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.sabado,
+                                                  expression: "sabado"
+                                                }
+                                              ],
+                                              staticClass:
+                                                "custom-control-input",
+                                              attrs: {
+                                                type: "checkbox",
+                                                id: "_tiendas",
+                                                value: "option1"
+                                              },
+                                              domProps: {
+                                                checked: Array.isArray(
+                                                  _vm.sabado
+                                                )
+                                                  ? _vm._i(
+                                                      _vm.sabado,
+                                                      "option1"
+                                                    ) > -1
+                                                  : _vm.sabado
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  var $$a = _vm.sabado,
+                                                    $$el = $event.target,
+                                                    $$c = $$el.checked
+                                                      ? true
+                                                      : false
+                                                  if (Array.isArray($$a)) {
+                                                    var $$v = "option1",
+                                                      $$i = _vm._i($$a, $$v)
+                                                    if ($$el.checked) {
+                                                      $$i < 0 &&
+                                                        (_vm.sabado = $$a.concat(
+                                                          [$$v]
+                                                        ))
+                                                    } else {
+                                                      $$i > -1 &&
+                                                        (_vm.sabado = $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          ))
+                                                    }
+                                                  } else {
+                                                    _vm.sabado = $$c
+                                                  }
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "custom-control-label",
+                                                attrs: { for: "_tiendas" }
+                                              },
+                                              [_vm._v("Sabado")]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-3" }, [
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "custom-control custom-checkbox"
+                                          },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.domingo,
+                                                  expression: "domingo"
+                                                }
+                                              ],
+                                              staticClass:
+                                                "custom-control-input",
+                                              attrs: {
+                                                type: "checkbox",
+                                                id: "_tiendas",
+                                                value: "option1"
+                                              },
+                                              domProps: {
+                                                checked: Array.isArray(
+                                                  _vm.domingo
+                                                )
+                                                  ? _vm._i(
+                                                      _vm.domingo,
+                                                      "option1"
+                                                    ) > -1
+                                                  : _vm.domingo
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  var $$a = _vm.domingo,
+                                                    $$el = $event.target,
+                                                    $$c = $$el.checked
+                                                      ? true
+                                                      : false
+                                                  if (Array.isArray($$a)) {
+                                                    var $$v = "option1",
+                                                      $$i = _vm._i($$a, $$v)
+                                                    if ($$el.checked) {
+                                                      $$i < 0 &&
+                                                        (_vm.domingo = $$a.concat(
+                                                          [$$v]
+                                                        ))
+                                                    } else {
+                                                      $$i > -1 &&
+                                                        (_vm.domingo = $$a
+                                                          .slice(0, $$i)
+                                                          .concat(
+                                                            $$a.slice($$i + 1)
+                                                          ))
+                                                    }
+                                                  } else {
+                                                    _vm.domingo = $$c
+                                                  }
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "custom-control-label",
+                                                attrs: { for: "_tiendas" }
+                                              },
+                                              [_vm._v("Domingo")]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-sm-12" }, [
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c("label", [
+                                          _vm._v("Texto Adicional")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("textarea", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.notas,
+                                              expression: "notas"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: { rows: "3", placeholder: "" },
+                                          domProps: { value: _vm.notas },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.notas = $event.target.value
+                                            }
+                                          }
+                                        })
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _vm.bandera_guardar
+                                      ? _c(
+                                          "div",
+                                          { staticClass: "col-12 row" },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "col-4" },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "btn btn-block btn-success",
+                                                    attrs: {
+                                                      type: "submit",
+                                                      disabled: !_vm.bandera
+                                                    }
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                        Guardar Instalación\n                                        "
+                                                    ),
+                                                    _vm.show
+                                                      ? _c("i", {
+                                                          staticClass:
+                                                            "fas fa-sync-alt fa-spin"
+                                                        })
+                                                      : _vm._e()
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _vm.bandera_modificar
+                                      ? _c(
+                                          "div",
+                                          { staticClass: "col-12 row" },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "col-4" },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "btn btn-block btn-success",
+                                                    attrs: {
+                                                      type: "submit",
+                                                      disabled: !_vm.bandera
+                                                    }
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                        Modificar Instalación\n                                        "
+                                                    ),
+                                                    _vm.show
+                                                      ? _c("i", {
+                                                          staticClass:
+                                                            "fas fa-sync-alt fa-spin"
+                                                        })
+                                                      : _vm._e()
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(" -->\n                        ")
                                   ])
                                 ]
                               )

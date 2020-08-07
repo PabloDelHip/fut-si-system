@@ -30,29 +30,99 @@
                                     </div>
                                 </div>
 
-                                 <div class="col-sm-12">
+                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <SelectInstalaciones></SelectInstalaciones>
                                     </div>
                                 </div>
-                                <!--
-                                <div class="col-sm-12">
+
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Dirección</label>
-                                        <input type="text" v-model="direccion" class="form-control" name="direccion">
+                                        <label>Duración de cada tiempo</label>
+                                        <small>(En minutos)</small>
+                                        <ValidationProvider name="tiempo" rules="numeric|required" v-slot="{ errors }">
+                                            <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="duracion_tiempo" name="tiempo">
+                                            <span class="error invalid-feedback">{{ errors[0] }}</span>
+                                        </ValidationProvider>
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12">
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Codigo Postal</label>
-                                        <input type="text" v-model="codigo_postal" class="form-control" name="codigo_postal">
+                                        <label>Sexo</label>
+                                        <ValidationProvider name="Instalacion" rules="required" v-slot="{ errors }"> 
+                                            <select class="select2 form-control" data-placeholder="Seleccionar Sexo" style="width: 100%;">
+                                                <option value="H">Hombre</option>
+                                                <option value="M">Mujer</option>
+                                                <option value="MX">Mixto</option>
+                                            </select>
+                                            <span :class="['error', 'invalid-feedback', errors[0] ? 'ver' : '']">{{ errors[0] }}</span>
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label>Fecha De Inicio del Torneo:</label>
+                                        <ValidationProvider name="Fecha Inicio" rules="required" v-slot="{ errors }">
+                                            <div class="input-group date" data-provide="datepicker">
+                                                <input type="text" class="form-control form-control-sm" v-model="fecha_inicio" readonly>
+                                                <div class="input-group-addon">
+                                                    <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span :class="['error', 'invalid-feedback', errors[0] ? 'ver' : '']">{{ errors[0] }}</span>
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label>Fecha Estimada De Finalización Del Torneo:</label>
+                                        <ValidationProvider name="Fecha Inicio" rules="required" v-slot="{ errors }">
+                                            <div class="input-group date" data-provide="datepicker">
+                                                <input type="text" class="form-control form-control-sm" v-model="fecha_final_temporada" readonly>
+                                                <div class="input-group-addon">
+                                                    <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span :class="['error', 'invalid-feedback', errors[0] ? 'ver' : '']">{{ errors[0] }}</span>
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label>Fecha Limite de pagos:</label>
+                                        <ValidationProvider name="Fecha Inicio" rules="required" v-slot="{ errors }">
+                                            <div class="input-group date" data-provide="datepicker">
+                                                <input type="text" class="form-control form-control-sm" v-model="fecha_limite_pagos" readonly>
+                                                <div class="input-group-addon">
+                                                    <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span :class="['error', 'invalid-feedback', errors[0] ? 'ver' : '']">{{ errors[0] }}</span>
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Costo De Inscripción</label>
+                                        <input type="text" v-model="costo_inscripcion" class="form-control" name="codigo_postal">
                                     </div>
                                 </div>
                                 
-                                <div class="col-sm-12">
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Telefono</label>
+                                        <label>Costo De Albitraje</label>
                                         <ValidationProvider name="Telefono" rules="numeric" v-slot="{ errors }">
                                             <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="telefono" name="telefono">
                                             <span class="error invalid-feedback">{{ errors[0] }}</span>
@@ -60,34 +130,70 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12">
+                                <div class="col-sm-6"></div>
+
+                                <div class="col-sm-3">
+                                    <!-- checkbox -->
                                     <div class="form-group">
-                                        <label>Celular</label>
-                                        <ValidationProvider name="Telefono" rules="numeric" v-slot="{ errors }">
-                                            <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="celular" name="celular">
-                                            <span class="error invalid-feedback">{{ errors[0] }}</span>
-                                        </ValidationProvider>
+                                        <div class="custom-control custom-checkbox">
+                                            <input v-model="lunes" class="custom-control-input" type="checkbox" id="_vestuarios" value="true">
+                                            <label for="_vestuarios" class="custom-control-label">Lunes</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <!-- checkbox -->
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input v-model="martes" class="custom-control-input" type="checkbox" id="_casacas" value="option1">
+                                            <label for="_casacas" class="custom-control-label">Martes</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <!-- checkbox -->
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input v-model="miercoles" class="custom-control-input" type="checkbox" id="_estacionamiento" value="option1">
+                                            <label for="_estacionamiento" class="custom-control-label">Miercoles</label>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12">
+                                <div class="col-sm-3">
+                                    <!-- checkbox -->
                                     <div class="form-group">
-                                    <ValidationProvider name="Email" rules="email" v-slot="{ errors }">
-                                        <label>Email</label>
-                                        <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="email" name="email">
-                                        <span class="error invalid-feedback">{{ errors[0] }}</span>
-                                    </ValidationProvider>
+                                        <div class="custom-control custom-checkbox">
+                                            <input v-model="jueves" class="custom-control-input" type="checkbox" id="_cafeteria" value="option1">
+                                            <label for="_cafeteria" class="custom-control-label">Jueves</label>
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                <div class="col-sm-12">
+                                <div class="col-sm-3">
+                                    <!-- checkbox -->
                                     <div class="form-group">
-                                        <label>Sitio web</label>
-                                        
-                                        <ValidationProvider name="Sitio Web" :rules="{ regex: /^(http?:\/\/www\.|https?:\/\/www\.|http?:\/\/|https?:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ }" v-slot="{ errors }">
-                                            <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="sitio_web" name="sitio_web">
-                                            <span class="error invalid-feedback">{{ errors[0] }}</span>
-                                        </ValidationProvider>
+                                        <div class="custom-control custom-checkbox">
+                                            <input v-model="viernes" class="custom-control-input" type="checkbox" id="_restaurantes" value="option1">
+                                            <label for="_restaurantes" class="custom-control-label">Viernes</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <!-- checkbox -->
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input v-model="sabado" class="custom-control-input" type="checkbox" id="_tiendas" value="option1">
+                                            <label for="_tiendas" class="custom-control-label">Sabado</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <!-- checkbox -->
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input v-model="domingo" class="custom-control-input" type="checkbox" id="_tiendas" value="option1">
+                                            <label for="_tiendas" class="custom-control-label">Domingo</label>
+                                        </div>
                                     </div>
                                 </div>
                                 

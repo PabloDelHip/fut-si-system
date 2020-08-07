@@ -1,6 +1,6 @@
 <template>
     <div class="row col-12">
-        <div  class="col-6">
+        <div  class="col-12">
             <div class="form-group">
                 <label>Instalaciones</label>
                 <ValidationProvider name="Instalacion" rules="required" v-slot="{ errors }"> 
