@@ -153,8 +153,6 @@ class OrganizacionController extends Controller
             $exception = (string) $e->getResponse()->getBody();
             $exception = json_decode($exception);
             return response()->json(['mesage' => $exception]);
-            
-            
         }
     }
 }

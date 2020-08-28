@@ -58,7 +58,14 @@ Route::group(['middleware' => ['login_token']], function () {
     Route::put('update-categoria/{id?}', ['as' => 'update-categoria', 'uses' => 'CategoriaController@updateCategoria']);
 
     //TORNEOS//
-    Route::get('panel-fut-si/alta/torneo', ['as' => 'panel-fut-si/alta/torneo', 'uses' => 'TorneoController@show']);
+    Route::get('panel-fut-si/alta/torneo', ['as' => 'panel-fut-si/alta/torneo', 'uses' => 'TorneoController@altaTorneo']);
+    Route::get('panel-fut-si/torneos', ['as' => 'panel-fut-si/torneos', 'uses' => 'TorneoController@index']);
+    Route::get('panel-fut-si/alta/torneo', ['as' => 'panel-fut-si/alta/torneo', 'uses' => 'TorneoController@index']);
+    Route::get('torneos/show', ['as' => 'torneo/show', 'uses' => 'TorneoController@show']);
+    Route::get('torneo/show/info/{id?}', ['as' => 'torneo/show/info', 'uses' => 'TorneoController@showInfo']);
+    Route::post('torneo/save', ['as' => 'panel-fut-si/torneo/save', 'uses' => 'TorneoController@save']);
 
+    //MODO JUEGO//
+    Route::get('modos_juego/show', ['as' => 'modos_juego/show', 'uses' => 'ModoJuegoController@showInfo']);
 
 });

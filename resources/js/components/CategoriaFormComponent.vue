@@ -16,7 +16,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <ValidationObserver v-slot="{ invalid, validate }" ref="observer">
+                        <ValidationObserver v-slot="{  validate }" ref="observer">
                         <form role="form" @submit.prevent="validate().then(submit)">
                             <div class="row">
                                 <div class="col-sm-12">

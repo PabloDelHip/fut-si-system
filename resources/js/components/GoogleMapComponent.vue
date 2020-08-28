@@ -21,7 +21,7 @@
             </gmap-marker>
         </gmap-map>
     </div>
-    <input 
+    <!-- <input  -->
     
 </template>
 

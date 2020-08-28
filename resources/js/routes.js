@@ -55,9 +55,20 @@ export default new Router({
             component: require('./components/CategoriasShowComponent').default,
         },
         {
+            path: '/proyecto_fut-si/public/panel-fut-si/torneos',
+            name: 'torneos',
+            component: require('./components/torneos/lista').default,
+        },
+        {
+            path: '/proyecto_fut-si/public/panel-fut-si/ver-torneo/:id',
+            name: 'ver_torneo',
+            component: require('./components/torneos/formulario').default,
+            props: true
+        },
+        {
             path: '/proyecto_fut-si/public/panel-fut-si/alta/torneo',
             name: 'alta_torneo',
-            component: require('./components/TorneoFormComponent').default,
+            component: require('./components/torneos/formulario').default,
         },
         
     ],

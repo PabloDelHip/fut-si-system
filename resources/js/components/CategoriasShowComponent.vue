@@ -27,7 +27,7 @@
                             </thead>
                             <tbody>
                             
-                                <tr v-for="(categoria,index) in categorias" >
+                                <tr v-for="(categoria) in categorias" :key="categoria._id" >
                                     <td style="width: 80%;"> {{ `${categoria.titulo}` }}</td>
                                     <td>
                                         <router-link :to="{ name:'ver_info_categoria', params: {id: categoria._id }}">

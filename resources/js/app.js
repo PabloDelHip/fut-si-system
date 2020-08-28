@@ -19,6 +19,17 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import VueRouter from 'vue-router'
 
+import { Datetime } from 'vue-datetime'
+// You need a specific loader for CSS files
+import 'vue-datetime/dist/vue-datetime.css'
+import moment from 'moment';
+import { Settings } from 'luxon'
+Settings.defaultLocale = 'mx'
+import Multiselect from 'vue-multiselect'
+
+
+
+
 
 // Activate the español locale.
 localize('es',es);
@@ -26,10 +37,13 @@ localize('es',es);
 
 window.Vue = require('vue');
 Vue.use(Select2);
+Vue.use(Datetime)
 Vue.use(SelectCiudades);
 Vue.use(VeeValidate);
 Vue.use(VueSweetalert2);
 Vue.use(VueRouter)
+  // register globally
+  Vue.component('multiselect', Multiselect)
 
 
 Vue.use(VueGoogleMaps, {
@@ -61,7 +75,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('instalaciones-component', require('./components/InstalacionesComponent.vue').default);
 Vue.component('organizacion-component', require('./components/OrganizacionComponent.vue').default);
 Vue.component('categoria-component', require('./components/CategoriaComponent.vue').default);
-Vue.component('torneo-component', require('./components/TorneoComponent.vue').default);
+Vue.component('torneo-component', require('./components/torneos/index.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
