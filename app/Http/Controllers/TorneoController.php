@@ -173,9 +173,37 @@ class TorneoController extends Controller
                     'vueltas_final' => $request->datos[0]['vueltas_final'],
                 ]
             ]);
+ 
+            $response = json_decode($response->getBody()->getContents());
+            $this->updateTorneoInstalacion($request->datos[0]['instalaciones'],$id);
+            // return response()->json($response);
+
+        } catch (RequestException $e) {
+            $exception = (string) $e->getResponse()->getBody();
+            $exception = json_decode($exception);
+            return response()->json(['mesage' => $exception]);
+        }
+    }
+
+    public function updateTorneoInstalacion($torneos_instalaciones,$id_torneo)
+    {
+        $token = Cookie::get('token');
+        $key = 'este-es-el-seed-desarrollo';
+        $token_info = JWT::decode($token, $key, array('HS256'));
+            
+        
+        try {
+            
+            $response = $this->client->request('PUT', 'torneos-instalaciones/torneo/'.$id_torneo, [
+                'form_params' => [
+                    'torneo_instalaciones' => $torneos_instalaciones,
+                    'id_usuario' => $token_info->usuario->_id
+                ]
+            ]);
             
             $response = json_decode($response->getBody()->getContents());
-            return response()->json($response);
+            dd(response()->json($response));
+            //return response()->json($response);
 
         } catch (RequestException $e) {
             $exception = (string) $e->getResponse()->getBody();

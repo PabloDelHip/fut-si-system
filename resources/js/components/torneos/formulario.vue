@@ -365,6 +365,7 @@
                 sabado: false,
                 domingo: false,
                 instalaciones: [],
+                instalaciones_eliminadas: [],
                 campeon: '',
                 categoria: '',
                 equipos_clasifican_final: '',
@@ -395,6 +396,10 @@
             },
             agregarInstalaciones(datos) {
                 this.instalaciones = datos;
+                console.log(datos);
+            },
+            agregarInstalacionesEliminadas(datos) {
+                this.instalaciones_eliminadas = datos;
                 console.log(datos);
             },
             agregarCategoria(datos) {

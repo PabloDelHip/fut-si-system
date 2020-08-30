@@ -29,6 +29,7 @@
         data() {
             return {
                 id_instalaciones: null,
+                id_instalaciones_remove: null,
                 value: [],
                 options: [],
                 headers: {
