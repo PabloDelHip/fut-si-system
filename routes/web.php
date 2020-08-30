@@ -61,9 +61,11 @@ Route::group(['middleware' => ['login_token']], function () {
     Route::get('panel-fut-si/alta/torneo', ['as' => 'panel-fut-si/alta/torneo', 'uses' => 'TorneoController@altaTorneo']);
     Route::get('panel-fut-si/torneos', ['as' => 'panel-fut-si/torneos', 'uses' => 'TorneoController@index']);
     Route::get('panel-fut-si/alta/torneo', ['as' => 'panel-fut-si/alta/torneo', 'uses' => 'TorneoController@index']);
+    Route::get('panel-fut-si/ver-torneo/{id}', ['as' => 'panel-fut-si/ver-torneo', 'uses' => 'TorneoController@index']);
     Route::get('torneos/show', ['as' => 'torneo/show', 'uses' => 'TorneoController@show']);
     Route::get('torneo/show/info/{id?}', ['as' => 'torneo/show/info', 'uses' => 'TorneoController@showInfo']);
     Route::post('torneo/save', ['as' => 'panel-fut-si/torneo/save', 'uses' => 'TorneoController@save']);
+    Route::put('torneo/update/{id?}', ['as' => 'torneo/update', 'uses' => 'TorneoController@updateTorneo']);
 
     //MODO JUEGO//
     Route::get('modos_juego/show', ['as' => 'modos_juego/show', 'uses' => 'ModoJuegoController@showInfo']);

@@ -5,15 +5,16 @@
          <section class="content">
             <div class="container-fluid">
                 <div class="row">
+                    <div class="col-12">
+                        <h3 class="titulo-panel">Alta Torneo</h3>
+                    </div>
                     <ValidationObserver v-slot="{validate }" ref="observer">
                         <form role="form" @submit.prevent="validate().then(submit)">
                             <!-- right column -->
                             <div class="col-md-8">
                                 <!-- general form elements disabled -->
                                 <div class="card card-primary">
-                                <div class="card-header">
-                                    <h3 class="card-title">Alta Organizaciones</h3>
-                                    
+                                <div class="card-cabecera">
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -58,32 +59,62 @@
                                                     <SelectModoJuego @onModoJuego="agregarModoJuego"></SelectModoJuego>
                                                 </div>
                                             </div>
+                                            <div class="col-12 mb-3" style="background-color: #d6d6d6; padding: 1px;"></div>
+                                            <div v-if="modo_juego=='5f47f71c0ae5e72718fb56d6'" class="col-sm-12 mb-3">
+                                                <div class="col-12 row ">
+                                                    <div class="col-12">
+                                                        <label>Como se define al campeon</label>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="custom-control custom-radio d-inline col-4">
+                                                            <input type="radio" name="primer_lugar" id="primer_lugar" v-model="campeon" value="Primer Lugar" class="custom-control-input">
+                                                            <label for="primer_lugar" class="custom-control-label">Primer Lugar Del Torneo</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio d-inline col-4">
+                                                            <input type="radio" name="liguilla" id="_liguilla" v-model="campeon" value="Liguilla" class="custom-control-input">
+                                                            <label for="_liguilla" class="custom-control-label">Liguilla</label>
+                                                        </div>
+                                                    </div>
 
-                                            <div class="col-sm-6">
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div v-if="modo_juego != '5f4800380ae5e72718fb56d8' && modo_juego !='' " class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>Num. de partidos regulares</label>
                                                     <ValidationProvider name="Numero de vueltas" rules="numeric|required" v-slot="{ errors }">
-                                                        <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="duracion_tiempo" name="tiempo">
+                                                        <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="vueltas_torneo" name="vueltas_torneo">
                                                         <span class="error invalid-feedback">{{ errors[0] }}</span>
                                                     </ValidationProvider>
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-6">
+                                            <div v-if="modo_juego=='5f47ffe00ae5e72718fb56d7'" class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Num. de equipos que pasan a la sig. ronda</label>
+                                                    <ValidationProvider name="Numero de Grupos" rules="numeric|required" v-slot="{ errors }">
+                                                        <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="equipos_clasifican_final" name="num_grupos">
+                                                        <span class="error invalid-feedback">{{ errors[0] }}</span>
+                                                    </ValidationProvider>
+                                                </div>
+                                            </div>
+
+                                            <div v-if="campeon=='Liguilla' || modo_juego=='5f4800380ae5e72718fb56d8' || modo_juego=='5f47ffe00ae5e72718fb56d7'" class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>Num. de partidos de eliminación</label>
                                                     <ValidationProvider name="Numero de eliminación" rules="numeric|required" v-slot="{ errors }">
-                                                        <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="duracion_tiempo" name="tiempo">
+                                                        <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="vueltas_eliminacion" name="vueltas_eliminacion">
                                                         <span class="error invalid-feedback">{{ errors[0] }}</span>
                                                     </ValidationProvider>
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-6">
+                                            <div v-if="campeon=='Liguilla' || modo_juego=='5f4800380ae5e72718fb56d8' || modo_juego=='5f47ffe00ae5e72718fb56d7'" class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>Num. partidos de la final</label>
-                                                    <ValidationProvider name="Numero de partidos para la final" rules="numeric|required" v-slot="{ errors }">
-                                                        <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="duracion_tiempo" name="tiempo">
+                                                    <label>Num. de partidos final</label>
+                                                    <ValidationProvider name="Numero de eliminación" rules="numeric|required" v-slot="{ errors }">
+                                                        <input type="text" :class="['form-control', errors[0] ? 'is-invalid' : ''] " v-model="vueltas_final" name="vueltas_final">
                                                         <span class="error invalid-feedback">{{ errors[0] }}</span>
                                                     </ValidationProvider>
                                                 </div>
@@ -100,9 +131,7 @@
                             <div class="col-md-8">
                                 <!-- general form elements disabled -->
                                 <div class="card card-primary">
-                                <div class="card-header">
-                                    <h3 class="card-title">Alta Organizaciones</h3>
-                                    
+                                <div class="card-cabecera">
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -140,7 +169,7 @@
                                                 <label>Fecha De Inicio del Torneo</label>
                                                     
                                                     <ValidationProvider name="Fecha Inicio" rules="required" v-slot="{ errors }">
-                                                        <datetime v-model="fecha_inicio">
+                                                        <datetime v-model="fecha_inicio" value-zone="local" zone="local">
                                                         </datetime>
                                                         <span :class="['error', 'invalid-feedback', errors[0] ? 'ver' : '']">{{ errors[0] }}</span>
                                                     </ValidationProvider>
@@ -151,7 +180,7 @@
                                                 <div class="form-group">
                                                 <label>Fecha Estimada De Finalización Del Torneo</label>
                                                     <ValidationProvider name="Fecha Final" rules="required" v-slot="{ errors }">
-                                                        <datetime v-model="fecha_final_temporada"></datetime>
+                                                        <datetime v-model="fecha_final_temporada" value-zone="local" zone="local"></datetime>
                                                         <span :class="['error', 'invalid-feedback', errors[0] ? 'ver' : '']">{{ errors[0] }}</span>
                                                     </ValidationProvider>
                                                 </div>
@@ -160,7 +189,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                 <label>Fecha Limite de pagos</label>
-                                                    <datetime v-model="fecha_limite_pagos"></datetime>
+                                                    <datetime v-model="fecha_limite_pagos" value-zone="local" zone="local"></datetime>
                                                 </div>
                                             </div>
 
@@ -322,7 +351,7 @@
                 nombre: '',
                 duracion_tiempo: '',
                 sexo_jugadores: '',
-                fecha_inicio: '',
+                fecha_inicio:'',
                 fecha_final_temporada: '',
                 fecha_limite_pagos: '',
                 costo_inscripcion: '',
@@ -336,11 +365,13 @@
                 sabado: false,
                 domingo: false,
                 instalaciones: [],
+                campeon: '',
                 categoria: '',
-                num_equipos_grupos: null,
-                vueltas_torneo: null,
-                vueltas_eliminacion: null,
-                vueltas_final: null,
+                equipos_clasifican_final: '',
+                vueltas_torneo: '',
+                vueltas_eliminacion: '',
+                vueltas_final: '',
+                num_grupos: '',
                 modo_juego: '',
                 tipo_torneo: '',
                 show: false,
@@ -401,8 +432,8 @@
                         duracion_tiempo: this.duracion_tiempo,
                         sexo_jugadores: this.sexo_jugadores,
                         fecha_inicio: moment(new Date(this.fecha_inicio)).format('YYYY-MM-DD'),
-                        fecha_final_temporada: moment(new Date(this.fecha_inicio)).format('YYYY-MM-DD'),
-                        fecha_limite_pagos: moment(new Date(this.fecha_inicio)).format('YYYY-MM-DD'),
+                        fecha_final_temporada: moment(new Date(this.fecha_final_temporada)).format('YYYY-MM-DD'),
+                        fecha_limite_pagos: moment(new Date(this.fecha_limite_pagos)).format('YYYY-MM-DD'),
                         costo_inscripcion: this.costo_inscripcion,
                         costo_albitraje: this.costo_albitraje,
                         notas: this.notas,
@@ -416,6 +447,12 @@
                         instalaciones: this.instalaciones,
                         categoria: this.categoria,
                         tipo_torneo: this.tipo_torneo,
+                        modo_juego: this.modo_juego,
+                        campeon: this.campeon,
+                        equipos_clasifican_final: this.equipos_clasifican_final,
+                        vueltas_torneo: this.vueltas_torneo,
+                        vueltas_eliminacion: this.vueltas_eliminacion,
+                        vueltas_final: this.vueltas_final
                     }];
                     this.show=true;
                     this.bandera = false;
@@ -445,7 +482,7 @@
                     else
                     {
                         
-                        await axios.put('http://localhost:8080/proyecto_fut-si/public/update-organizacion/'+this.id,
+                        await axios.put('http://localhost:8080/proyecto_fut-si/public/torneo/update/'+this.id,
                         { datos: this.datos })
                         .then(response => {
                             
@@ -538,6 +575,26 @@
                     {
                         this.categoria = '';
                     }
+                    if(typeof this.campeon === 'undefined')
+                    {
+                        this.campeon = '';
+                    }
+                    if(typeof this.equipos_clasifican_final === 'undefined')
+                    {
+                        this.equipos_clasifican_final = '';
+                    }
+                    if(typeof this.vueltas_torneo === 'undefined')
+                    {
+                        this.vueltas_torneo = '';
+                    }
+                    if(typeof this.vueltas_eliminacion === 'undefined')
+                    {
+                        this.vueltas_eliminacion = '';
+                    }
+                    if(typeof this.vueltas_final === 'undefined')
+                    {
+                        this.vueltas_final = '';
+                    }
             },
             async alertaConfirmacion()
             {
@@ -546,15 +603,18 @@
                 this.$swal.fire({
                     icon: 'success',
                     title: 'Bien',
-                    text: 'Instalación guardada de forma correcta',
+                    text: 'Torneo guardado de forma correcta',
                     confirmButtonText: 'Continuar.'})
                     .then((result) => {
-                    if (result.value) {
-                        this.show = false;
-                        this.bandera = true;
-                        location.href ="http://localhost:8080/proyecto_fut-si/public/panel-fut-si/organizaciones";
-                    }
-                });
+                        if(result.value)
+                        {
+
+                            this.show = false;
+                            this.bandera = true;
+                            location.href ="http://localhost:8080/proyecto_fut-si/public/panel-fut-si/torneos";
+                
+                        }
+                    });
             },
             async showInfoTorneo()
             {
@@ -565,7 +625,6 @@
                     
                     await axios.get('http://localhost:8080/proyecto_fut-si/public/torneo/show/info/'+this.id)
                     .then(response => {
-                        console.log("holi boli");
                         this.nombre= response.data.torneo_instalacion[0].torneo.nombre;
                         this.duracion_tiempo= response.data.torneo_instalacion[0].torneo.duracion_tiempo;
                         this.sexo_jugadores= response.data.torneo_instalacion[0].torneo.sexo_jugadores;
@@ -583,6 +642,13 @@
                         this.sabado= response.data.torneo_instalacion[0].torneo.sabado;
                         this.domingo= response.data.torneo_instalacion[0].torneo.domingo;
                         this.$store.state.id_categoria= response.data.torneo_instalacion[0].torneo.categoria;
+                        this.$store.state.id_modo_juego= response.data.torneo_instalacion[0].torneo.modo_juego;
+                        this.modo_juego = response.data.torneo_instalacion[0].torneo.modo_juego;
+                        this.campeon = response.data.torneo_instalacion[0].torneo.campeon;
+                        this.equipos_clasifican_final = response.data.torneo_instalacion[0].torneo.equipos_clasifican_final;
+                        this.vueltas_torneo = response.data.torneo_instalacion[0].torneo.vueltas_torneo;
+                        this.vueltas_eliminacion = response.data.torneo_instalacion[0].torneo.vueltas_eliminacion;
+                        this.vueltas_final = response.data.torneo_instalacion[0].torneo.vueltas_final;
                         this.$store.state.id_tipo_torneo= response.data.torneo_instalacion[0].torneo.tipo_torneo;
                         let num_instalaciones = response.data.torneo_instalacion.length;
                         for (let i = 0; i < num_instalaciones; i++) {

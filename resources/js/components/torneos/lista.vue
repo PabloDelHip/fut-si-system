@@ -64,7 +64,7 @@
             }
         },
         methods: {
-            async selectCategorias()
+            async selectTorneos()
             {
                 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
                 await axios.get('http://localhost:8080/proyecto_fut-si/public/torneos/show')
@@ -78,30 +78,30 @@
                     console.log(e);
                 })
             },
-            deleteCategoria(id)
+            deleteTorneo(id)
             {
 
                 this.$swal.fire({
                         icon: 'warning',
                         title: 'Eliminar',
-                        text: '¿Seguro que quiere eliminar la organización?',
+                        text: '¿Seguro que quiere eliminar el torneo?',
                         showCancelButton: true,
                         cancelButtonText: 'Cancelar',
                         cancelButtonColor: '#d33',
-                        confirmButtonText: 'Si, eliminar organización'})
+                        confirmButtonText: 'Si, eliminar torneo'})
                         .then((result) => {
                         if (result.value) {
 
                             axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-                            axios.delete('http://localhost:3000/categoria/'+id)
+                            axios.delete('http://localhost:3000/torneo/'+id)
                             .then(response => {
 
                                 this.$swal.fire(
                                 'Eliminado',
-                                'Instalación eliminada de forma correcta.',
+                                'Torneo eliminado de forma correcta.',
                                 'success'
                                 )
-                                this.selectCategorias();
+                                this.selectTorneos();
                                 
                             })
                             .catch(e => {
@@ -114,7 +114,7 @@
             }
         },
         mounted(){
-            let categoria = this.selectCategorias();
+            let categoria = this.selectTorneos();
         }
     }
 </script>
