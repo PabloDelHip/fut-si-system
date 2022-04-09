@@ -26,7 +26,7 @@
         "@pderas/vue2-geocoder": "^1.1.0",
         "cross-env": "^7.0.2",
         "luxon": "^1.24.1",
-        "moment": "^2.27.0",
+        "moment": "^2.29.2",
         "moment-timezone": "^0.5.31",
         "v-select2-component": "^0.4.3",
         "vee-validate": "^3.3.7",
